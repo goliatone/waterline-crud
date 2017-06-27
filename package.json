@@ -18,7 +18,10 @@
     "url": "https://github.com/goliatone/waterline-crud/issues"
   },
   "homepage": "https://github.com/goliatone/waterline-crud#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.15.3",
+    "gextend": "^0.3.0"
+  },
   "devDependencies": {
     "bogota": "^2.0.4",
     "nyc": "^10.3.2",
