@@ -215,3 +215,45 @@ test('API delete: DELETE /api/user/:id', (t) => {
     t.deepEqual(route, expected, 'API delete should return a valid');
     t.end();
 });
+
+test('API prefix: DELETE /api/v0/user/:id', (t) => {
+    let manager = urlHelper.getDefault({
+        id: 1,
+        identity: 'user'
+    }, {
+        apiPrefix: 'api/v0'
+    });
+
+    let expected = {
+        route: '/api/v0/user/:id',
+        action: 'delete',
+        method: 'delete',
+        prefix: 'api/v0'
+    };
+
+    let route = manager.toRouteObject('delete');
+    t.comment('Action destroy and delet are the same.');
+    t.deepEqual(route, expected, 'getDefault should accept apiPrefix option');
+    t.end();
+});
+
+test('CRUD prefix: GET /admin/create', (t) => {
+    let manager = urlHelper.getDefault({
+        id: 1,
+        identity: 'user'
+    }, {
+        crudPrefix: 'admin'
+    });
+
+    let expected = {
+        route: '/admin/user/create',
+        action: 'create',
+        method: 'get',
+        prefix: 'admin'
+    };
+
+    let route = manager.toRouteObject('create');
+
+    t.deepEqual(route, expected, 'getDefault should accept crudPrefix option');
+    t.end();
+});
