@@ -1,6 +1,6 @@
 {
   "name": "waterline-crud",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Waterline CRUD module for Express applications",
   "main": "index.js",
   "scripts": {
