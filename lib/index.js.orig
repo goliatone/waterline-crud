@@ -159,8 +159,13 @@ module.exports = function(app, settings={}) {
 
         //Adding lifecycle methods to resource
         resource.lifecycle = extend({}, options.lifecycle, resource.lifecycle);
+<<<<<<< HEAD
         // console.log('---- CRUD --- ');
         // console.log('options', options);
+=======
+        console.log('---- CRUD --- ');
+        console.log('options', options);
+>>>>>>> ba31f0f8458d2f9a24ef0674b4ffb890ab6258e8
 
         let scaffold = new Scaffold(options);
 
